@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ info.name }} - About Us{% endblock %}
+
+{% block content %}
+<section class="about-header">
+    <h1>About Us</h1>
+</section>
+
+<section class="about-content">
+    <div class="about-text">
+        <p>{{ info.about }}</p>
+        
+        <h2>Our Promise</h2>
+        <ul>
+            <li>Fresh baked goods made from scratch daily</li>
+            <li>Traditional Italian recipes and techniques</li>
+            <li>Quality ingredients, no shortcuts</li>
+            <li>Family owned and operated</li>
+            <li>Warm, welcoming café atmosphere</li>
+        </ul>
+    </div>
+    
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600" alt="Fresh baked goods">
+    </div>
+</section>
+
+<section class="contact-section">
+    <h2>Visit Us</h2>
+    <div class="contact-grid">
+        <div class="contact-card">
+            <h3>{{ info.latham.name }}</h3>
+            <p>{{ info.latham.address }}</p>
+            <p>{{ info.latham.phone }}</p>
+            <p>{{ info.latham.hours_mon_sat }}</p>
+            <p>{{ info.latham.hours_sunday }}</p>
+        </div>
+        <div class="contact-card">
+            <h3>{{ info.troy.name }}</h3>
+            <p>{{ info.troy.address }}</p>
+            <p>{{ info.troy.phone }}</p>
+            <p>{{ info.troy.hours }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="social-section">
+    <h2>Follow Us</h2>
+    <a href="https://instagram.com/bellanapolibakery" target="_blank" class="social-link">
+        <i class="fab fa-instagram"></i>
+        <span>{{ info.instagram }}</span>
+    </a>
+</section>
+
+<section class="allergy-notice">
+    <p>{{ allergy }}</p>
+</section>
+{% endblock %}

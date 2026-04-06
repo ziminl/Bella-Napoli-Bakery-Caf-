@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}{{ info.name }} - Home{% endblock %}
+
+{% block content %}
+<section class="hero hero-bakery">
+    <div class="hero-content">
+        <h1>{{ info.name }}</h1>
+        <p class="tagline">{{ info.tagline }}</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('menu') }}" class="btn btn-primary">Café Menu</a>
+            <a href="{{ url_for('bakery') }}" class="btn btn-secondary">Bakery</a>
+        </div>
+    </div>
+</section>
+
+<section class="locations">
+    <div class="location-card">
+        <div class="location-icon">
+            <i class="fas fa-store"></i>
+        </div>
+        <h3>{{ info.latham.name }}</h3>
+        <p class="location-address">{{ info.latham.address }}</p>
+        <p class="location-phone">{{ info.latham.phone }}</p>
+        <div class="location-hours">
+            <p>{{ info.latham.hours_mon_sat }}</p>
+            <p>{{ info.latham.hours_sunday }}</p>
+        </div>
+    </div>
+    <div class="location-card">
+        <div class="location-icon">
+            <i class="fas fa-store"></i>
+        </div>
+        <h3>{{ info.troy.name }}</h3>
+        <p class="location-address">{{ info.troy.address }}</p>
+        <p class="location-phone">{{ info.troy.phone }}</p>
+        <div class="location-hours">
+            <p>{{ info.troy.hours }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <div class="feature-icon"><i class="fas fa-birthday-cake"></i></div>
+        <h3>Specialty Cakes</h3>
+        <p>Custom decorated cakes for birthdays, weddings, and all your special celebrations</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon"><i class="fas fa-cookie"></i></div>
+        <h3>Italian Pastries</h3>
+        <p>Traditional Neapolitan pastries, cannoli, sfogliatelle, and authentic Italian cookies</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon"><i class="fas fa-mug-hot"></i></div>
+        <h3>Café & Coffee</h3>
+        <p>Fresh espresso, cappuccino, and specialty drinks to start your day</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon"><i class="fas fa-bread-slice"></i></div>
+        <h3>Fresh Breads</h3>
+        <p>Baked fresh daily - ciabatta, focaccia, and artisan Italian loaves</p>
+    </div>
+</section>
+
+<section class="info-section">
+    <div class="info-card">
+        <h2>Follow Us</h2>
+        <p>Stay updated with our daily specials and new arrivals</p>
+        <a href="https://instagram.com/bellanapolibakery" target="_blank" class="btn btn-primary">
+            <i class="fab fa-instagram"></i> {{ info.instagram }}
+        </a>
+    </div>
+</section>
+
+<section class="allergy-notice">
+    <p>{{ allergy }}</p>
+</section>
+{% endblock %}

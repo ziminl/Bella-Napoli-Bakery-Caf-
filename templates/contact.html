@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}{{ info.name }} - Contact Us{% endblock %}
+
+{% block content %}
+<section class="about-header">
+    <h1>Contact Us</h1>
+</section>
+
+<section class="contact-full">
+    <div class="contact-detail">
+        <h2>{{ info.latham.name }}</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> {{ info.latham.address }}</p>
+            <p><i class="fas fa-phone"></i> {{ info.latham.phone }}</p>
+            <p><i class="fas fa-clock"></i> {{ info.latham.hours_mon_sat }}</p>
+            <p><i class="fas fa-clock"></i> {{ info.latham.hours_sunday }}</p>
+        </div>
+    </div>
+
+    <div class="contact-detail">
+        <h2>{{ info.troy.name }}</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> {{ info.troy.address }}</p>
+            <p><i class="fas fa-phone"></i> {{ info.troy.phone }}</p>
+            <p><i class="fas fa-clock"></i> {{ info.troy.hours }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="social-section">
+    <h2>Connect With Us</h2>
+    <a href="https://instagram.com/bellanapolibakery" target="_blank" class="social-link">
+        <i class="fab fa-instagram"></i>
+        <span>{{ info.instagram }}</span>
+    </a>
+</section>
+
+<section class="allergy-notice">
+    <p>{{ allergy }}</p>
+</section>
+{% endblock %}

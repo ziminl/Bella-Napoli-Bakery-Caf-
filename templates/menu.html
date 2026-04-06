@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}{{ info.name }} - Café Menu{% endblock %}
+
+{% block content %}
+<section class="menu-header">
+    <h1>Café Menu</h1>
+    <p>Fresh breakfast and lunch options daily</p>
+</section>
+
+<section class="menu-section">
+    <h2 class="section-title">Breakfast</h2>
+    <div class="menu-list">
+        {% for item in cafe_menu.breakfast %}
+        <div class="menu-list-item">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="menu-section">
+    <h2 class="section-title">Lunch</h2>
+    <div class="menu-list">
+        {% for item in cafe_menu.lunch %}
+        <div class="menu-list-item">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="menu-section">
+    <h2 class="section-title">Beverages</h2>
+    <div class="menu-list">
+        {% for item in cafe_menu.beverages %}
+        <div class="menu-list-item">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="allergy-notice">
+    <p>{{ allergy }}</p>
+</section>
+{% endblock %}

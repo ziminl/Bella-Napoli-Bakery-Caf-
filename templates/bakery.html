@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{{ info.name }} - Bakery{% endblock %}
+
+{% block content %}
+<section class="menu-header">
+    <h1>Bakery</h1>
+    <p>Fresh baked goods every day</p>
+</section>
+
+<section class="menu-section">
+    <h2 class="section-title">Italian Pastry Specialties</h2>
+    <div class="bakery-grid">
+        {% for item in bakery.pastries %}
+        <div class="bakery-card">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="menu-section">
+    <h2 class="section-title">Cakes & Sweets</h2>
+    <div class="bakery-grid">
+        {% for item in bakery.cakes %}
+        <div class="bakery-card">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="menu-section">
+    <h2 class="section-title">Breads & Rolls</h2>
+    <div class="bakery-grid">
+        {% for item in bakery.breads %}
+        <div class="bakery-card">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="menu-section">
+    <h2 class="section-title">Bakery Specials</h2>
+    <div class="specials-card">
+        <p>Ask about our holiday specials and seasonal offerings!</p>
+        <p class="special-note">Custom cake orders welcome - call ahead to place your order.</p>
+    </div>
+</section>
+
+<section class="allergy-notice">
+    <p>{{ allergy }}</p>
+</section>
+{% endblock %}
